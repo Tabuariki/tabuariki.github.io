@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:5000';
+const apiUrl = 'https://tabuariki.github.io';
 
 // Letters for which buttons will be created
 const letters = ['A', 'B', 'E', 'I', 'K', 'M', 'N', 'O', 'R', 'T', 'U', 'V', 'W'];
