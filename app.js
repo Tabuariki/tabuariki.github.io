@@ -1,13 +1,39 @@
-const apiUrl = 'https://tekitinari.vercel.app';
+const apiUrl = 'http://localhost:5000';
 
-document.getElementById('searchButton').addEventListener('click', async () => {
-    const query = document.getElementById('searchInput').value;
-    if (!query) return;
+// Letters for which buttons will be created
+const letters = ['A', 'B', 'E', 'I', 'K', 'M', 'N', 'O', 'R', 'T', 'U', 'V', 'W'];
 
-    const response = await fetch(`${apiUrl}/search?query=${query}`);
+document.addEventListener('DOMContentLoaded', () => {
+    // Create letter buttons
+    const letterButtonsDiv = document.getElementById('letterButtons');
+    letters.forEach(letter => {
+        const button = document.createElement('button');
+        button.textContent = letter;
+        button.addEventListener('click', () => fetchWordsByLetter(letter));
+        letterButtonsDiv.appendChild(button);
+    });
+
+    // Search functionality
+    document.getElementById('searchButton').addEventListener('click', async () => {
+        const query = document.getElementById('searchInput').value;
+        if (!query) return;
+        const response = await fetch(`${apiUrl}/search?query=${query}`);
+        const words = await response.json();
+        displayResults(words);
+    });
+
+    // Back button functionality
+    document.getElementById('backButton').addEventListener('click', () => {
+        document.getElementById('resultsPage').style.display = 'none';
+        document.getElementById('mainPage').style.display = 'block';
+    });
+});
+
+async function fetchWordsByLetter(letter) {
+    const response = await fetch(`${apiUrl}/words/${letter}`);
     const words = await response.json();
     displayResults(words);
-});
+}
 
 function displayResults(words) {
     const resultsDiv = document.getElementById('results');
@@ -27,6 +53,10 @@ function displayResults(words) {
     });
 
     resultsDiv.appendChild(list);
+
+    // Switch to results page
+    document.getElementById('mainPage').style.display = 'none';
+    document.getElementById('resultsPage').style.display = 'block';
 }
 
 async function fetchDefinition(word) {

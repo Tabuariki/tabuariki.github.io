@@ -9,9 +9,17 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" id="searchInput" placeholder="Search for a word">
-        <button id="searchButton">Search</button>
-        <div id="results"></div>
+        <div id="mainPage">
+            <input type="text" id="searchInput" placeholder="Search for a word">
+            <button id="searchButton">Search</button>
+            <div id="letterButtons">
+                <!-- Letter buttons will be dynamically added here -->
+            </div>
+        </div>
+        <div id="resultsPage" style="display: none;">
+            <button id="backButton">Back</button>
+            <div id="results"></div>
+        </div>
     </div>
     <script src="app.js"></script>
     <script>
