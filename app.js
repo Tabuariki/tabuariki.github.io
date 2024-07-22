@@ -70,7 +70,7 @@ function displayResults(words) {
     words.forEach(word => {
         const listItem = document.createElement('li');
         listItem.textContent = word;
-        listItem.addEventListener('click', () => fetchDefinition(word));
+        listItem.addEventListener('click', () => fetchDefinition2(word));
         list.appendChild(listItem);
     });
 
