@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch(`${apiUrl}/searchwrd?query=${query}`);
         const words = await response.json();
         displayResults(words);
+        document.getElementById('resultsPage').style.display = 'flex';
+        document.getElementById('mainPage').style.display = 'none';
     });
     
     // Search definition
@@ -29,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch(`${apiUrl}/searchdef?query=${query}`);
         const words = await response.json();
         displayResults(words);
+        document.getElementById('resultsPage').style.display = 'flex';
+        document.getElementById('mainPage').style.display = 'none';
     });
 
     // Back button functionality
