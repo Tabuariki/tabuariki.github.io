@@ -13,8 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
         letterButtonsDiv.appendChild(button);
     });
 
-    // Search functionality
-    document.getElementById('searchButton').addEventListener('click', async () => {
+    // Search word
+    document.getElementById('searchWrdButton').addEventListener('click', async () => {
+        const query = document.getElementById('searchInput').value.trim();
+        if (!query) return;
+        const response = await fetch(`${apiUrl}/search?query=${query}`);
+        const words = await response.json();
+        displayResults(words);
+    });
+    
+    // Search definition
+    document.getElementById('searchDefButton').addEventListener('click', async () => {
         const query = document.getElementById('searchInput').value.trim();
         if (!query) return;
         const response = await fetch(`${apiUrl}/search?query=${query}`);
