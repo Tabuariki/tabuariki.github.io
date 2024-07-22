@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Back button functionality
     document.getElementById('backButton').addEventListener('click', () => {
         document.getElementById('resultsPage').style.display = 'none';
-        document.getElementById('mainPage').style.display = 'block';
+        document.getElementById('mainPage').style.display = 'flex';
     });
 });
 
