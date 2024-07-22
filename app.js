@@ -69,7 +69,7 @@ function displayResults(words) {
 
     // Switch to results page
     document.getElementById('mainPage').style.display = 'none';
-    document.getElementById('resultsPage').style.display = 'block';
+    document.getElementById('resultsPage').style.display = 'flex';
 }
 
 async function fetchDefinition(word) {
