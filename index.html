@@ -18,6 +18,7 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
+            width: 100vw;
             overflow: hidden;
         }
         /* Add basic styling for layout */
@@ -50,6 +51,7 @@
             width: 100%;
         }
         #results li {
+            width: 100%;
             padding: 10px;
             border-bottom: 1px solid #ddd;
         }
@@ -72,7 +74,7 @@
         </div>
         
         <!-- Results page for displaying search results and word definitions -->
-        <div id="resultsPage" style="display: none; width: 100%">
+        <div id="resultsPage" style="display: none;">
             <button id="backButton">Back</button>
             <div id="results"></div>
         </div>
