@@ -5,13 +5,22 @@ const letters = ['A', 'B', 'E', 'I', 'K', 'M', 'N', 'O', 'R', 'T', 'U', 'V', 'W'
 
 document.addEventListener('DOMContentLoaded', () => {
     // Create letter buttons
-    const letterButtonsDiv = document.getElementById('letterButtons');
+    //const letterButtonsDiv = document.getElementById('letterButtons');
+    //letters.forEach(letter => {
+    //    const button = document.createElement('button');
+    //    button.textContent = letter;
+    //    button.addEventListener('click', () => fetchWordsByLetter(letter));
+    //    letterButtonsDiv.appendChild(button);
+    //});
+    
+    const list = document.getElementById('ul');
     letters.forEach(letter => {
-        const button = document.createElement('button');
-        button.textContent = letter;
-        button.addEventListener('click', () => fetchWordsByLetter(letter));
-        letterButtonsDiv.appendChild(button);
+        const listItem = document.createElement('li');
+        listItem.textContent = letter;
+        listItem.addEventListener('click', () => fetchWordsByLetter(letter));
+        list.appendChild(listItem);
     });
+    letterButtonsDiv.appendChild(list);
 
     // Search word
     document.getElementById('searchWrdButton').addEventListener('click', async () => {
