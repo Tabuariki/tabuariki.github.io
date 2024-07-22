@@ -1,4 +1,4 @@
-const apiUrl = 'https://tabuariki.github.io';
+const apiUrl = 'https://tekitinari.vercel.app';
 
 // Letters for which buttons will be created
 const letters = ['A', 'B', 'E', 'I', 'K', 'M', 'N', 'O', 'R', 'T', 'U', 'V', 'W'];
