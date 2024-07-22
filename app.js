@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('searchWrdButton').addEventListener('click', async () => {
         const query = document.getElementById('searchInput').value.trim();
         if (!query) return;
-        const response = await fetch(`${apiUrl}/search?query=${query}`);
+        const response = await fetch(`${apiUrl}/searchwrd?query=${query}`);
         const words = await response.json();
         displayResults(words);
     });
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('searchDefButton').addEventListener('click', async () => {
         const query = document.getElementById('searchInput').value.trim();
         if (!query) return;
-        const response = await fetch(`${apiUrl}/search?query=${query}`);
+        const response = await fetch(`${apiUrl}/searchdef?query=${query}`);
         const words = await response.json();
         displayResults(words);
     });
