@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //    letterButtonsDiv.appendChild(button);
     //});
     
-    const list = document.getElementById('ul');
+    const list = document.createElement('ul');
     letters.forEach(letter => {
         const listItem = document.createElement('li');
         listItem.textContent = letter;
