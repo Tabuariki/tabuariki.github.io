@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         displayResults(words);
         document.getElementById('resultsPage').style.display = 'flex';
         document.getElementById('mainPage').style.display = 'none';
+        document.getElementById('definitionPage').style.display = 'none';
     });
     
     // Search definition
@@ -33,12 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
         displayResults(words);
         document.getElementById('resultsPage').style.display = 'flex';
         document.getElementById('mainPage').style.display = 'none';
+        document.getElementById('definitionPage').style.display = 'none';
     });
 
     // Back button functionality
     document.getElementById('backButton').addEventListener('click', () => {
         document.getElementById('resultsPage').style.display = 'none';
         document.getElementById('mainPage').style.display = 'flex';
+        document.getElementById('definitionPage').style.display = 'none';
+    });
+    // Back to list button functionality
+    document.getElementById('backListButton').addEventListener('click', () => {
+        document.getElementById('resultsPage').style.display = 'flex';
+        document.getElementById('mainPage').style.display = 'none';
+        document.getElementById('definitionPage').style.display = 'none';
     });
 });
 
@@ -70,6 +79,7 @@ function displayResults(words) {
     // Switch to results page
     document.getElementById('mainPage').style.display = 'none';
     document.getElementById('resultsPage').style.display = 'flex';
+    document.getElementById('definitionPage').style.display = 'none';
 }
 
 async function fetchDefinition(word) {
@@ -83,4 +93,22 @@ async function fetchDefinition(word) {
         defParagraph.textContent = def;
         resultsDiv.appendChild(defParagraph);
     });
+}
+
+async function fetchDefinition2(word) {
+    const response = await fetch(`${apiUrl}/definition/${word}`);
+    const definitions = await response.json();
+    const defDiv = document.getElementById('definition');
+
+    defDiv.innerHTML = `<h2>${word}</h2>`;
+    definitions.forEach(def => {
+        const defParagraph = document.createElement('p');
+        defParagraph.textContent = def;
+        defDiv.appendChild(defParagraph);
+    });
+    
+    // Switch to definition page
+    document.getElementById('mainPage').style.display = 'none';
+    document.getElementById('resultsPage').style.display = 'none';
+    document.getElementById('definitionPage').style.display = 'flex';
 }
