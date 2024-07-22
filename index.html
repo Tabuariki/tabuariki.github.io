@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="app">
+        <!-- Main page containing search and letter buttons -->
         <div id="mainPage">
             <input type="text" id="searchInput" placeholder="Search for a word">
             <button id="searchButton">Search</button>
@@ -16,11 +17,14 @@
                 <!-- Letter buttons will be dynamically added here -->
             </div>
         </div>
+        
+        <!-- Results page for displaying search results and word definitions -->
         <div id="resultsPage" style="display: none;">
             <button id="backButton">Back</button>
             <div id="results"></div>
         </div>
     </div>
+
     <script src="app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
