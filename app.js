@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Search functionality
     document.getElementById('searchButton').addEventListener('click', async () => {
-        const query = document.getElementById('searchInput').value;
+        const query = document.getElementById('searchInput').value.trim();
         if (!query) return;
         const response = await fetch(`${apiUrl}/search?query=${query}`);
         const words = await response.json();
