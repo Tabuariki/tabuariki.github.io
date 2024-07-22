@@ -5,7 +5,7 @@ const letters = ['A', 'B', 'E', 'I', 'K', 'M', 'N', 'O', 'R', 'T', 'U', 'V', 'W'
 
 document.addEventListener('DOMContentLoaded', () => {
     // Create letter buttons
-    //const letterButtonsDiv = document.getElementById('letterButtons');
+    const letterButtonsDiv = document.getElementById('letterButtons');
     //letters.forEach(letter => {
     //    const button = document.createElement('button');
     //    button.textContent = letter;
