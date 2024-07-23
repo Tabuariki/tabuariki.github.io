@@ -105,7 +105,8 @@ async function fetchDefinition(word) {
 }
 
 async function fetchDefinition2(word) {
-    const response = await fetch(`${apiUrl}/definition/${word}`);
+    const encodedWord = encodeURIComponent(word);
+    const response = await fetch(`${apiUrl}/definition/${encodedWord}`);
     const definitions = await response.json();
     const defDiv = document.getElementById('definition');
 
@@ -115,6 +116,7 @@ async function fetchDefinition2(word) {
         defParagraph.textContent = def;
         defDiv.appendChild(defParagraph);
     });
+
     
     // Switch to definition page
     document.getElementById('mainPage').style.display = 'none';
