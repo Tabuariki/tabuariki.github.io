@@ -22,12 +22,12 @@
             width: 100vw;
             overflow: hidden;
         }
-        /* Basic layout for pages */
+        /* Layout for pages */
         #mainPage, #resultsPage, #definitionPage {
             flex: 1;
             overflow: hidden;
             padding-top: 60px;
-            padding-bottom: 90px;
+            /* Removed bottom padding to let footer be pushed to bottom */
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -121,11 +121,11 @@
             <div id="letterButtons">
                 <!-- Letter buttons will be dynamically added here -->
             </div>
-            <!-- Spacer to visually separate letterButtons from the footer -->
+            <!-- Spacer to separate letterButtons from footer -->
             <div class="footerSpacer"></div>
             <!-- Footer inside mainPage -->
             <footer>
-                This Kiribati to English dictionary is based on the <em>Gilbertese-English Dictionary: Te Tekitinari n Taetae ni Kiribati ma Ingiriti</em>, originally compiled in French by Father Ernest Sabatier, M.S.C., and translated into English by Sister Oliva. The original publication was released by the South Pacific Commission Publications Bureau in 1971. The source material was obtained from the <a href="https://catalogue.nla.gov.au/catalog/1297034" target="_blank">National Library of Australia</a> and has been adapted for this web app.
+                This Kiribati to English dictionary is based on the <em>Gilbertese-English Dictionary: Te Tekitinari n Taetae ni Kiribati ma Ingiriti</em>, originally compiled in French by Father Ernest Sabatier, M.S.C., and translated into English by Sister Oliva. The original publication was released by the South Pacific Commission Publications Bureau in 1971. The source material was obtained from the <a href="https://catalogue.nla.gov.au/catalog/1297034" target="_blank">National Library of Australia</a> and has been adapted for this application.
             </footer>
         </div>
         
