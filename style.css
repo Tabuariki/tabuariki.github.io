@@ -62,23 +62,8 @@ footer {
 @media (max-width: 767px) {
     footer {
         font-size: 8px;
-    }
-}
-
-/* Safe-area padding support with fallback */
-@supports (padding: max(env(safe-area-inset-bottom), 0px)) {
-    @media (max-width: 767px) {
-        footer {
-            padding-bottom: calc(10px + env(safe-area-inset-bottom));
-        }
-    }
-}
-
-@supports not (padding: max(env(safe-area-inset-bottom), 0px)) {
-    @media (max-width: 767px) {
-        footer {
-            padding-bottom: 30px; /* Fallback extra padding */
-        }
+        /* Apply fixed extra bottom padding to ensure it’s not covered */
+        padding-bottom: 50px;
     }
 }
 
