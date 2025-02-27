@@ -12,11 +12,9 @@ body {
 #app {
     background-color: white;
     padding: 20px;
-    padding-bottom: calc(20px + env(safe-area-inset-bottom)); /* extra padding at bottom */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Input and button styles */
 #searchInput {
@@ -44,7 +42,7 @@ body {
     margin-top: 20px;
 }
 
-/* Footer styling – now using default width */
+/* Footer styling – using default width */
 footer {
     background-color: white;
     padding: 10px;
@@ -64,7 +62,8 @@ footer {
 @media (max-width: 767px) {
     footer {
         font-size: 8px;
-        padding-bottom: calc(10px + env(safe-area-inset-bottom));
+        /* Fallback value of 20px if safe area inset is not provided */
+        padding-bottom: calc(10px + env(safe-area-inset-bottom, 20px));
     }
 }
 
