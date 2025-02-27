@@ -3,10 +3,11 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     height: 100vh;
     background-color: #f0f0f0;
+    /* Prevent body scrolling since we handle it with our content container */
+    overflow: hidden;
 }
 
 #app {
@@ -14,10 +15,9 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    height: 90vh;  /* Adjusted to leave room for the fixed footer */
-    overflow: hidden;
+    /* Make the app container take all space above the footer */
+    flex: 1;
+    overflow-y: auto;
 }
 
 #searchInput {
@@ -45,12 +45,12 @@ body {
     margin-top: 20px;
 }
 
-/* Layout for pages */
+/* Layout for pages within #app */
 #mainPage, #resultsPage, #definitionPage {
     flex: 1;
     overflow-y: auto;
     padding-top: 60px;
-    padding-bottom: 90px;  /* Reserve space so content doesn't extend under footer */
+    /* Remove extra padding-bottom here since #app is already sized */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -93,16 +93,13 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-/* Letter buttons container is now limited so its content won't be hidden behind the footer */
+/* Letter buttons container – it will grow as needed but is part of the scrollable #mainPage */
 #letterButtons {
     flex: 1;
     overflow-y: auto;
     padding: 10px;
     border: 1px solid #ddd;
     box-sizing: border-box;
-    /* Adjust the max-height based on header (input/button) and footer heights */
-    max-height: calc(100vh - 60px - 50px - 90px);
-    /* Explanation: 60px (padding-top of #mainPage) + ~50px (search area) + 90px (footer space) */
 }
 
 #letterButtons ul {
@@ -145,19 +142,14 @@ button:active {
     background-color: #004085;
 }
 
-/* Footer fixed at the bottom */
+/* Footer styling (now outside #app) */
 footer {
     background-color: #f8f9fa;
     padding: 10px;
     text-align: center;
-    font-size: 12px;  /* Slightly smaller text */
+    font-size: 12px;
     color: #6c757d;
     border-top: 1px solid #e9ecef;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 footer a {
