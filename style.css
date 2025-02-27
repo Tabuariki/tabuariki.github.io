@@ -16,7 +16,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Input and button styles remain unchanged */
+/* Input and button styles */
 #searchInput {
     width: 300px;
     padding: 10px;
@@ -42,17 +42,23 @@ body {
     margin-top: 20px;
 }
 
-/* Footer styling – note margin-top added for separation */
+/* Footer styling */
 footer {
     background-color: #f8f9fa;
     padding: 10px;
     text-align: center;
-    font-size: 8px; /* Reduced font size */
+    font-size: 10px; /* Reduced font size */
     color: #6c757d;
     border-top: 1px solid #e9ecef;
-    margin-top: auto; /* Pushes footer to the bottom */
-    margin-top: 20px; /* Additional fixed separation from letterButtons */
+    /* Extend footer horizontally to the edge of the page:
+       - Remove the parent's 20px horizontal padding */
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+    /* Add safe-area bottom padding so content isn’t cut off on mobile */
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
 }
+
 footer a {
     color: #007BFF;
     text-decoration: none;
