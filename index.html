@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, orientation=portrait">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, orientation=portrait">
     <title>Dictionary App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
@@ -21,12 +22,12 @@
             width: 100vw;
             overflow: hidden;
         }
-        /* Add basic styling for layout */
+        /* Layout for pages – removed the bottom padding so the footer can be pushed to the bottom */
         #mainPage, #resultsPage, #definitionPage {
             flex: 1;
             overflow: hidden;
             padding-top: 60px;
-            padding-bottom: 90px;
+            /* Removed padding-bottom: 90px; */
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -120,7 +121,7 @@
             <div id="letterButtons">
                 <!-- Letter buttons will be dynamically added here -->
             </div>
-
+            <!-- Footer inside mainPage; margin-top now separates it from letterButtons and anchors it at the bottom -->
             <footer>
                 This Kiribati to English dictionary is based on the <em>Gilbertese-English Dictionary: Te Tekitinari n Taetae ni Kiribati ma Ingiriti</em>, originally compiled in French by Father Ernest Sabatier, M.S.C., and translated into English by Sister Oliva. The original publication was released by the South Pacific Commission Publications Bureau in 1971. The source material was obtained from the <a href="https://catalogue.nla.gov.au/catalog/1297034" target="_blank">National Library of Australia</a> and has been adapted for this application.
             </footer>

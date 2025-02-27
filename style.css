@@ -16,6 +16,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Input and button styles remain unchanged */
 #searchInput {
     width: 300px;
     padding: 10px;
@@ -41,6 +42,7 @@ body {
     margin-top: 20px;
 }
 
+/* Footer styling – note margin-top added for separation */
 footer {
     background-color: #f8f9fa;
     padding: 10px;
@@ -49,6 +51,7 @@ footer {
     color: #6c757d;
     border-top: 1px solid #e9ecef;
     margin-top: auto; /* Pushes footer to the bottom */
+    margin-top: 20px; /* Additional fixed separation from letterButtons */
 }
 footer a {
     color: #007BFF;
