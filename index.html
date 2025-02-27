@@ -6,9 +6,18 @@
   <title>Dictionary App</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
+  <style>
+    /* Ensure body and html remain non-scrollable */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
-  <!-- The main content container takes all available space except for the footer -->
   <div id="app">
       <!-- Main page containing search and letter buttons -->
       <div id="mainPage">
@@ -20,6 +29,9 @@
           <div id="letterButtons">
               <!-- Letter buttons will be dynamically added here -->
           </div>
+          <footer>
+              This Kiribati to English dictionary is based on the <em>Gilbertese-English Dictionary: Te Tekitinari n Taetae ni Kiribati ma Ingiriti</em>, originally compiled in French by Father Ernest Sabatier, M.S.C., and translated into English by Sister Oliva. The original publication was released by the South Pacific Commission Publications Bureau in 1971. The source material was obtained from the <a href="https://catalogue.nla.gov.au/catalog/1297034" target="_blank">National Library of Australia</a> and has been adapted for this application.
+          </footer>
       </div>
       
       <!-- Results page for displaying search results and word definitions -->
@@ -34,11 +46,6 @@
           <div id="definition"></div>
       </div>
   </div>
-  
-  <!-- Footer with credits (only on the home page) -->
-  <footer>
-      This Kiribati to English dictionary is based on the <em>Gilbertese-English Dictionary: Te Tekitinari n Taetae ni Kiribati ma Ingiriti</em>, originally compiled in French by Father Ernest Sabatier, M.S.C., and translated into English by Sister Oliva. The original publication was released by the South Pacific Commission Publications Bureau in 1971. The source material was obtained from the <a href="https://catalogue.nla.gov.au/catalog/1297034" target="_blank">National Library of Australia</a> and has been adapted for this application.
-  </footer>
 
   <script src="app.js"></script>
   <script>
