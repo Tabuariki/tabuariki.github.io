@@ -40,3 +40,20 @@ body {
 #results {
     margin-top: 20px;
 }
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    font-size: 8px; /* Reduced font size */
+    color: #6c757d;
+    border-top: 1px solid #e9ecef;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
