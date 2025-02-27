@@ -16,7 +16,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Input and button styles */
+/* Inputs and buttons */
 #searchInput {
     width: 300px;
     padding: 10px;
@@ -42,27 +42,37 @@ body {
     margin-top: 20px;
 }
 
-/* Footer styling */
+/* Footer styles with responsive font size and width adjustments */
 footer {
     background-color: #f8f9fa;
     padding: 10px;
     text-align: center;
-    font-size: 10px; /* Reduced font size */
     color: #6c757d;
     border-top: 1px solid #e9ecef;
-    /* Extend footer horizontally to the edge of the page:
-       - Remove the parent's 20px horizontal padding */
-    width: calc(100% + 40px);
-    margin-left: -20px;
-    margin-right: -20px;
-    /* Add safe-area bottom padding so content isn’t cut off on mobile */
-    padding-bottom: calc(10px + env(safe-area-inset-bottom));
 }
 
-footer a {
-    color: #007BFF;
-    text-decoration: none;
+/* Desktop: extend footer to the edge and use 12px text */
+@media (min-width: 768px) {
+    footer {
+        font-size: 12px;
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        margin-right: -20px;
+    }
 }
-footer a:hover {
-    text-decoration: underline;
+
+/* Mobile: keep full width and use 8px text, with safe-area bottom padding */
+@media (max-width: 767px) {
+    footer {
+        font-size: 8px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    }
+}
+
+/* Spacer to visually separate letterButtons from footer */
+.footerSpacer {
+    height: 20px;
 }
